@@ -8,6 +8,12 @@ resource "aws_s3_bucket" "artifacts" {
   bucket = "cicd-artifacts-${var.aws_account_id}-test"
 }
 
+
+resource "aws_s3_bucket" "terraform_state" {
+  bucket = "terraform-state-${var.aws_account_id}-test"
+}
+
+
 # IAM ROLES PARA CI/CD
 module "iam_codepipeline" {
   source = "../modules/iam"

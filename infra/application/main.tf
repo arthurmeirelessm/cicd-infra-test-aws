@@ -3,9 +3,6 @@ provider "aws" {
   region = var.aws_region
 }
 
-resource "aws_s3_bucket" "terraform_state" {
-  bucket = "terraform-state-${data.aws_caller_identity.current.account_id}-test"
-}
 
 # IAM LAMBDA
 module "iam_lambda" {

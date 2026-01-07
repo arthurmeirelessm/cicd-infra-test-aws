@@ -4,7 +4,6 @@ env:
   variables:
     TF_IN_AUTOMATION: "true"
     TERRAFORM_VERSION: "1.6.0"
-    STATE_BUCKET_PREFIX: "terraform-state-552516487395-test"  
 
 phases:
   install:
@@ -17,24 +16,8 @@ phases:
 
   pre_build:
     commands:
-      - echo "Getting AWS Account ID"
-      - export STATE_BUCKET="${STATE_BUCKET_PREFIX}"
-      - echo "Using state bucket ${STATE_BUCKET}"
-      
+      - echo "Initializing Terraform"
       - cd infra/application
-      
-      # Criar backend.tf automaticamente
-      - |
-        cat > backend.tf <<EOF
-        terraform {
-          backend "s3" {
-            bucket = "${STATE_BUCKET}"
-            key    = "application/terraform.tfstate"
-            region = "us-east-1"
-          }
-        }
-        EOF
-      
       - terraform init -reconfigure
 
   build:
