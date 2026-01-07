@@ -17,7 +17,7 @@ phases:
   pre_build:
     commands:
       - echo "Initializing Terraform"
-      - cd infra
+      - cd infra/application  # ← Apenas a camada de aplicação
       - terraform init
 
   build:
