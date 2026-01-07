@@ -92,7 +92,7 @@ module "iam_codebuild" {
         {
           Effect = "Allow"
           Action = [
-            "iam:*",           # Permite criar roles da aplicação
+            "iam:*",           
             "lambda:*",
             "s3:*",
             "logs:*",
