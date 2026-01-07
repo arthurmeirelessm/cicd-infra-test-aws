@@ -49,7 +49,7 @@ module "codebuild_infra" {
   aws_account_id = var.aws_account_id
 
   # Infra does not need lambda vars
-  buildspec_path = "templates/buildspec_infra.yml"
+  buildspec_path = "infra/buildspec_infra.yml"
 }
 
 ####################################
