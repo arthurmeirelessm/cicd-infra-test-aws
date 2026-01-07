@@ -59,3 +59,14 @@ module "second_test_lambda" {
   role_arn        = module.iam_lambda.role_arn
   placeholder_zip = "${path.module}/../placeholder.zip"
 }
+
+# LAMBDA 3 - Teste
+module "third_lambda" {
+  source = "../modules/lambda"
+
+  function_name   = "third-lambda"
+  runtime         = "python3.11"
+  handler         = "handler.handler"
+  role_arn        = module.iam_lambda.role_arn
+  placeholder_zip = "${path.module}/../placeholder.zip"
+}
