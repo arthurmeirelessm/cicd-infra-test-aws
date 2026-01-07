@@ -9,7 +9,7 @@ variable "github_owner" {
 }
 
 variable "codestar_connection_arn" {
-    default = "arn:aws:codeconnections:us-east-1:552516487395:connection/7d04d618-0b0b-45f7-8f14-5ca99a6c47cf"
+    default = "arn:aws:codeconnections:us-east-1:552516487395:connection/51441b53-56a4-441e-9fce-d3667adaa545"
 }
 
 variable "backend_repository_name" {

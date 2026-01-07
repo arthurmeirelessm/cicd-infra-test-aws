@@ -25,8 +25,6 @@ resource "aws_codepipeline" "this" {
         ConnectionArn    = var.codestar_connection_arn
         FullRepositoryId = "${var.github_owner}/${var.repository_name}"
         BranchName       = var.branch_name
-        DetectChanges        = "true"             
-        OutputArtifactFormat = "CODE_ZIP"         
       }
     }
   }
